@@ -262,6 +262,28 @@ h1 {
     background: var(--accent);
     box-shadow: 0 0 10px var(--accent);
     animation: fillProgress 2s ease-in-out forwards;
+
+.submit-btn { 
+    width: 100%; 
+    padding: 1.5rem; 
+    background: var(--fg); /* This ensures it is white (foreground) */
+    color: var(--bg);      /* This ensures text is black (background) */
+    border: none; 
+    font-family: inherit; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.3s;
+    
+    /* --- IPHONE FIXES --- */
+    -webkit-appearance: none; /* Removes iOS default button styling */
+    border-radius: 0;         /* Removes iOS default rounded corners */
+    opacity: 1;               /* Ensures it's not washed out */
+}
+
+.submit-btn:hover { 
+    background: var(--accent); 
+    color: #000; 
+
 }
 
 /* Footer */
@@ -282,6 +304,7 @@ h1 {
     .scroll-content { padding: 2rem 1.5rem; }
     .project-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .form-row { flex-direction: column; gap: 0.5rem; }
+
 }
 
 @keyframes fillProgress {
@@ -297,4 +320,7 @@ h1::after {
 @keyframes blinkCursor {
     from, to { opacity: 1; }
     50% { opacity: 0; }
+}
+
+    .section-container { margin-bottom: 4rem; }
 }
