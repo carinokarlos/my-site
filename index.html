@@ -3,141 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Carlos Miguel Cariño</title>
+    <title>C.MIGUEL // DEVELOPER</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-content">
-            <div class="logo">Potvrn4k_</div>
-            <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
+    <div class="grid-overlay"></div>
+
+    <nav class="top-bar">
+        <div class="status-indicator">
+            <span class="blink"></span> SYSTEM_ACTIVE // 2026
+        </div>
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">Profile</a>
+            <a href="#contact">Connect</a>
         </div>
     </nav>
 
-    <div class="container">
-        <header>
-            <h1>Fullstack <br> Developer.</h1>
-            <div class="hero-grid">
-                <p class="hero-desc">
-                    Building digital experiences that focus on clarity, typography, and functional minimalism.
-                </p>
+    <main class="main-layout">
+        <section class="left-pane">
+            <div class="hero-content">
+                <span class="version">LOC: 14.65N_121.05E // MNL</span>
+                <h1>CARLOS<br>MIGUEL</h1>
+                <p class="role-desc">Fullstack Engineer specialized in high-performance digital systems and technical minimalism.</p>
                 
-                <div class="edu-card">
-                    <span class="edu-tag">Education</span>
-                    <p><strong>National University — Fairview</strong></p>
-                    <p>BSIT: Mobile and Internet Technologies</p>
+                <div class="social-icons">
+                    <a href="https://github.com/carlxsx" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/..." target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="https://facebook.com/..." target="_blank" title="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="mailto:miguel.carlosc27@gmail.com" title="Email"><i data-lucide="mail"></i></a>
                 </div>
             </div>
-        </header>
-
-        <section id="work" class="projects">
-            <a href="https://github.com/carlxsx/Esmile.git" target="_blank" class="project-card-link">
-                <div class="project-card">
-                    <h3>01. Esmile</h3>
-                    <p>Dental Appointment System - 3rd Year Capstone Project</p>
-                </div>
-            </a>
-
-            <a href="https://github.com/carlxsx/iWash.git" target="_blank" class="project-card-link">
-                <div class="project-card">
-                    <h3>02. IWash</h3>
-                    <p>Integrated Car Wash & Web-Based Booking System for 1 Elite Automotive.</p>
-                </div>
-            </a>
-
-            <a href="https://github.com/carlxsx/SmartFaq.git" target="_blank" class="project-card-link">
-                <div class="project-card">
-                    <h3>03. Smart FAQ</h3>
-                    <p>A Simple FAQ Management App (Electron + HTML/JS/CSS)</p>
-                </div>
-            </a>
-
-            <a href="https://github.com/carlxsx/PakundoCars-Website.git" target="_blank" class="project-card-link">
-                <div class="project-card">
-                    <h3>04. Pakundo Cars</h3>
-                    <p>Business website (currently under development)</p>
-                </div>
-            </a>
         </section>
 
-        <section id="about" class="cv-section">
-            <div class="cv-container">
-                <div class="cv-text">
-                    <h2>Experience & Resume</h2>
-                    <p>I specialize in creating high-performance digital products. My resume covers my technical stack, past roles at design agencies, and my approach to minimal UI/UX.</p>
-                    
-                    <div class="cv-actions">
-                        <a href="resume/Carlos-Miguel-Angeles-Carino.pdf" download class="btn">Download CV</a>
-                        <a href="resume/Carlos-Miguel-Angeles-Carino.pdf" target="_blank" class="btn btn-outline">Live Preview</a>
-                    </div>
-                </div>
+        <section class="right-pane">
+            <div class="scroll-content">
                 
-                <div class="cv-preview">
-                    <div class="document-mockup">
-                        <div class="line long"></div>
-                        <div class="line medium"></div>
-                        <div class="line short"></div>
-                        <div class="line long"></div>
-                        <div class="line long"></div>
+                <div id="work" class="section-container">
+                    <div class="block-header">01 // SELECTED_PROJECTS</div>
+                    <div class="project-list">
+                        
+                        <a href="https://github.com/carlxsx/Esmile.git" target="_blank" class="project-row">
+                            <div class="p-left">
+                                <span class="p-num">01</span>
+                                <span class="p-name">ESMILE</span>
+                                <span class="p-tag">DENTAL_SYSTEM</span>
+                                <span class="p-status">[ APPOINTMENT_LOGIC + CLINIC_MGMT ]</span>
+                            </div>
+                            <i data-lucide="external-link"></i>
+                        </a>
+
+                        <a href="https://github.com/carlxsx/iWash.git" target="_blank" class="project-row">
+                            <div class="p-left">
+                                <span class="p-num">02</span>
+                                <span class="p-name">IWASH</span>
+                                <span class="p-tag">SERVICE_SCHEDULER</span>
+                                <span class="p-status">[ AUTO_WASH + ALL_MAINTENANCE_MODS ]</span>
+                            </div>
+                            <i data-lucide="external-link"></i>
+                        </a>
+
+                        <a href="https://github.com/carlxsx/SmartFaq.git" target="_blank" class="project-row">
+                            <div class="p-left">
+                                <span class="p-num">03</span>
+                                <span class="p-name">SMART FAQ</span>
+                                <span class="p-tag">ELECTRON_JS</span>
+                                <span class="p-status">[ CROSS_PLATFORM_DESKTOP_UI ]</span>
+                            </div>
+                            <i data-lucide="external-link"></i>
+                        </a>
+
+                        <a href="https://github.com/carlxsx/PakundoCars-Website.git" target="_blank" class="project-row">
+                            <div class="p-left">
+                                <span class="p-num">04</span>
+                                <span class="p-name">FACUNDO</span>
+                                <span class="p-tag">AUTOMOTIVE_COMMERCE</span>
+                                <span class="p-status">[ STOCK_MGMT + CRM ]</span>
+                            </div>
+                            <i data-lucide="external-link"></i>
+                        </a>    
+
                     </div>
+                </div>
+
+                <div id="about" class="section-container">
+                    <div class="block-header">02 // PROFILE_LOG</div>
+                    <div class="about-text">
+                        <p>I bridge the gap between design and engineering. Currently pursuing BSIT at National University — Fairview.</p>
+                        <p>Specialization: MERN Stack, Electron Desktop Apps, and Scalable Cloud Infrastructure.</p>
+                        <a href="resume/Carlos-Miguel-Angeles-Carino.pdf" class="cv-btn">
+                            <i data-lucide="file-text"></i> DOWNLOAD_CV.PDF
+                        </a>
+                    </div>
+                </div>
+
+                <div id="contact" class="section-container">
+                    <div class="block-header">03 // ESTABLISH_COMM</div>
+                    <form class="terminal-form">
+                        <div class="form-row">
+                            <label>> NAME:</label>
+                            <input type="text" spellcheck="false" placeholder="REQUIRED">
+                        </div>
+                        <div class="form-row">
+                            <label>> EMAIL:</label>
+                            <input type="email" spellcheck="false" placeholder="REQUIRED">
+                        </div>
+                        <div class="form-row">
+                            <label>> MSG:</label>
+                            <textarea rows="3" placeholder="ENTER MESSAGE..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">EXECUTE_SEND</button>
+                    </form>
+                </div>
+
+                <footer class="bottom-footer">
+                    <div class="footer-line"></div>
+                    <p>© 2026 // CARLOS MIGUEL CARIÑO // ALL_RIGHTS_RESERVED</p>
                 </div>
             </div>
         </section>
+    </main>
 
-        <section id="contact" class="contact-section">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Let's Connect</h2>
-                    <p>I’m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+    <script>
+        // 1. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 2. Premium Smooth Scroll (Updated for Minimal Gap)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
                     
-                    <div class="social-links">
-                        <a href="https://github.com/carlxsx" target="_blank" aria-label="GitHub">
-                            <i data-lucide="github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/carlos-miguel-cari%C3%B1o-492430253/" target="_blank" aria-label="LinkedIn">
-                            <i data-lucide="linkedin"></i>
-                        </a>
-                        <a href="https://www.facebook.com/mikar.kilam/" target="_blank" aria-label="Facebook">
-                            <i data-lucide="facebook"></i>
-                        </a>
-                        <a href="mailto:miguel.carlosc27@gmail.com" aria-label="Email">
-                            <i data-lucide="mail"></i>
-                        </a>
-                    </div>
+                    const targetSection = document.querySelector(targetId);
+                    const scrollContainer = document.querySelector('.right-pane');
 
-                    <script>
-                    lucide.createIcons();
-                    </script>
-                </div>
+                    if (targetSection && scrollContainer) {
+                        // Offset set to 0 for a tighter, more immediate alignment
+                        const targetPosition = targetSection.offsetTop;
 
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea rows="5" placeholder="Tell me about your project" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </section>
+                        scrollContainer.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
 
-        <footer>
-            &copy; 2026 Carlos Miguel Cariño. Built with Focus.
-        </footer>
-    </div>
+        // 3. Live System Clock (Manila Time)
+        function updateClock() {
+            const statusElement = document.querySelector('.status-indicator');
+            if (!statusElement) return;
 
+            const now = new Date();
+            const options = { 
+                timeZone: 'Asia/Manila', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: false 
+            };
+            const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
+            
+            statusElement.innerHTML = `<span class="blink"></span> SYSTEM_ACTIVE // ${timeString} // 2026`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); 
+
+        // 4. Enhanced Form Submission
+        const contactForm = document.querySelector('.terminal-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('.submit-btn');
+                
+                // Visual feedback for "Executing" command
+                btn.innerText = "STATUS: SENDING...";
+                btn.style.opacity = "0.7";
+                
+                setTimeout(() => {
+                    btn.innerText = "COMMAND_EXECUTED_SUCCESSFULLY";
+                    btn.style.background = "var(--accent)";
+                    btn.style.color = "#000";
+                    btn.style.opacity = "1";
+                    contactForm.reset();
+                    
+                    setTimeout(() => {
+                        btn.innerText = "EXECUTE_SEND";
+                        btn.style.background = "";
+                        btn.style.color = "";
+                    }, 3000);
+                }, 1000);
+            });
+        }
+    </script>
 </body>
 </html>

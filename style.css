@@ -1,332 +1,235 @@
-/* CSS Variables */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 :root {
-    --bg-color: #0a0a0a;
-    --surface: #121212;
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
-    --border: #262626;
-    --accent: #ffffff;
-    --transition: all 0.4s ease; /* Slightly slower for a premium feel */
+    --bg: #000000;
+    --fg: #ffffff;
+    --border: #222222;
+    --accent: #00ff00; /* Subtle green for technical feel */
 }
 
-/* Global Reset & Behavior */
-html {
-    scroll-behavior: smooth;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Space Mono', monospace;
+    overflow: hidden; /* Prevent body scroll to enable pane scroll */
 }
 
-/* 1. Edge-to-Edge Navigation */
-nav {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: rgba(10, 10, 10, 0.8); /* Semi-transparent */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+/* Background Grid */
+.grid-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+/* Nav Bar */
+.top-bar {
+    height: 70px;
     border-bottom: 1px solid var(--border);
-    transition: padding 0.4s ease;
-}
-
-/* Centering the content inside the full-width Nav */
-.nav-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 3rem;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.logo {
-    font-weight: 800;
-    letter-spacing: -1px;
-    font-size: 1.5rem;
+.status-indicator { 
+    font-size: 0.7rem; 
+    letter-spacing: 2px; 
+    display: flex; 
+    align-items: center; 
+    color: #666; 
 }
 
-.nav-links a {
-    color: var(--text-dim);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-size: 0.9rem;
-    transition: var(--transition);
+.blink { 
+    width: 6px; height: 6px; 
+    background: var(--accent); 
+    border-radius: 50%; 
+    margin-right: 12px; 
+    animation: pulse 1.5s infinite; 
 }
 
-.nav-links a:hover {
-    color: var(--accent);
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--fg); 
+    margin-left: 2.5rem; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
 }
 
-/* 2. Layout Container */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
+.nav-links a:hover { color: var(--accent); }
+
+/* Main Layout */
+.main-layout { 
+    display: flex; 
+    height: calc(100vh - 70px); 
+    align-items: stretch;
 }
 
-/* Sections & Typography */
-header {
-    padding: 8rem 0;
-}
-
-/* Added buffer for sticky nav */
-section {
-    scroll-margin-top: 100px; 
-}
-
-h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 1.1;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-.hero-desc {
-    color: var(--text-dim);
-    font-size: 1.25rem;
-    max-width: 600px;
-}
-
-/* 3. Projects Grid */
-.projects {
-    padding: 4rem 0;
-    display: grid;
-    /* justify-content: center handles the 4th item alignment */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
-    gap: 2rem;
-}
-
-/* Project Link Fixes (Removing Blue) */
-.project-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-.project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.project-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
-}
-
-.project-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    color: var(--text-main);
-}
-
-.project-card p {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-}
-
-/* 4. CV Section */
-.cv-section {
-    padding: 8rem 0;
-    border-top: 1px solid var(--border);
-}
-
-.cv-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+.left-pane {
+    flex: 0.8;
+    border-right: 1px solid var(--border);
+    display: flex;
     align-items: center;
+    padding: 0 5rem;
 }
 
-.cv-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+.right-pane {
+    flex: 1.2;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+    scroll-behavior: smooth;
+    /* Add this to help the browser calculate positions better */
+    position: relative; 
 }
 
-.cv-actions {
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1rem;
+.scroll-content { 
+    padding: 1.5rem 5rem 2rem; /* Tightened top padding from 6rem to 1.5rem */
 }
 
-.cv-preview {
-    display: flex;
-    justify-content: center;
-    background: var(--surface);
-    padding: 3rem;
-    border: 1px solid var(--border);
+/* Hero Typography */
+.version { 
+    font-size: 0.7rem; 
+    color: #555; 
+    letter-spacing: 4px; 
+    margin-bottom: 1rem; 
+    display: block; 
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-.resume-image {
-    width: 200px;
-    height: 260px;
-    object-fit: cover;
-    object-position: top;
-    background: #1a1a1a;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    filter: grayscale(100%);
-    transition: var(--transition);
-}
-
-.resume-image:hover {
-    filter: grayscale(0%);
-}
-
-/* Mockup Fallback (if image is not used) */
-.document-mockup {
-    width: 200px;
-    height: 260px;
-    background: #1a1a1a;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.line {
-    height: 8px;
-    background: #333;
-    border-radius: 4px;
-}
-.line.long { width: 100%; }
-.line.medium { width: 70%; }
-.line.short { width: 40%; }
-
-/* 5. Contact Section */
-.contact-section {
-    padding: 8rem 0;
-    border-top: 1px solid var(--border);
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-}
-
-.contact-info h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.social-links {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row; /* Horizontal icons */
-    gap: 20px;
-}
-
-.social-links a {
-    color: var(--text-dim);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
+.version::before {
+    content: "> ";
     color: var(--accent);
-    transform: translateY(-3px);
 }
+
+h1 { 
+    font-size: clamp(4rem, 8vw, 10rem); 
+    line-height: 0.85; 
+    margin-bottom: 2.5rem; 
+    letter-spacing: -0.05em; 
+    font-weight: 900;
+    color: var(--fg);
+}
+
+.role-desc { 
+    max-width: 400px; 
+    color: #777; 
+    line-height: 1.5; 
+    margin-bottom: 4rem; 
+    font-size: 1rem; 
+    font-weight: 400;
+}
+
+/* Icon Spacing */
+.social-icons { display: flex; gap: 1.5rem; }
+.social-icons a { color: var(--fg); transition: 0.3s; opacity: 0.6; }
+.social-icons a:hover { opacity: 1; transform: translateY(-3px); color: var(--accent); }
+
+/* Right Content Spacing */
+.section-container { 
+    padding-top: 1rem; 
+    margin-bottom: 6rem;
+    /* ADD THIS LINE: It creates a buffer so the header isn't hidden or skipped */
+    scroll-margin-top: 2rem; 
+}
+
+.block-header { 
+    border-bottom: 1px solid var(--border); 
+    padding-bottom: 0.8rem; 
+    margin-bottom: 1.5rem; /* Reduced from 3rem */
+    font-size: 0.75rem; 
+    color: #555; 
+    letter-spacing: 2px; 
+}
+
+/* Project Rows */
+.project-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 0; /* Reduced from 2.5rem to lessen gaps */
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--fg);
+    transition: 0.3s ease;
+}
+
+.project-row:hover { 
+    border-bottom-color: var(--fg); 
+    padding-left: 1rem; 
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.p-left { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.p-num { font-size: 0.8rem; color: #444; }
+.p-name { font-size: 1.8rem; font-weight: 700; }
+.p-tag { font-size: 0.6rem; color: #666; border: 1px solid #333; padding: 2px 8px; }
+
+.p-status {
+    font-size: 0.65rem;
+    color: var(--accent);
+    opacity: 0.7;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.project-row:hover .p-status {
+    opacity: 1;
+}
+
+/* About Text */
+.about-text p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: #ccc; max-width: 600px; }
+.cv-btn { 
+    display: inline-flex; align-items: center; gap: 10px; 
+    text-decoration: none; color: var(--fg); border: 1px solid var(--fg); 
+    padding: 1rem 2rem; font-size: 0.8rem; transition: 0.3s;
+}
+.cv-btn:hover { background: var(--fg); color: var(--bg); }
 
 /* Form Styling */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.form-row { display: flex; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.8rem; }
+.form-row label { font-size: 0.8rem; color: #555; white-space: nowrap; }
+.form-row input, .form-row textarea { 
+    background: transparent; border: none; width: 100%; 
+    color: var(--fg); font-family: inherit; font-size: 1rem; outline: none; 
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.submit-btn { 
+    width: 100%; padding: 1.5rem; background: var(--fg); border: none; 
+    font-family: inherit; font-weight: 700; cursor: pointer; transition: 0.3s;
 }
+.submit-btn:hover { background: var(--accent); color: #000; }
 
-.form-group label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-dim);
-}
+/* Footer Fix */
+.bottom-footer { margin-top: 6rem; padding-bottom: 3rem; }
+.footer-line { height: 1px; background: var(--border); margin-bottom: 2rem; }
+.bottom-footer p { font-size: 0.7rem; color: #444; text-align: center; letter-spacing: 2px; }
 
-input, textarea {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    padding: 1rem;
-    color: var(--text-main);
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-}
-
-/* 6. Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    background: var(--accent);
-    color: var(--bg-color);
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    border: 1px solid var(--accent);
-    cursor: pointer;
-}
-
-.btn-outline {
-    background: transparent !important;
-    color: var(--text-main) !important;
-    border: 1px solid var(--border);
-}
-
-.btn:hover {
-    background: var(--text-dim);
-    border-color: var(--text-dim);
-}
-
-/* 7. Footer */
-footer {
-    padding: 4rem 0;
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 0.8rem;
-    border-top: 1px solid var(--border);
-}
-
-/* 8. Responsive Adjustments */
-@media (max-width: 768px) {
-    .nav-links { 
-        display: none; 
-    }
-    
-    .cv-container, .contact-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .cv-actions, .social-links {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cv-preview {
-        order: -1;
-    }
+/* Responsive */
+@media (max-width: 1100px) {
+    .main-layout { flex-direction: column; overflow-y: auto; height: auto; }
+    .left-pane { border-right: none; border-bottom: 1px solid var(--border); padding: 5rem 2rem; }
+    .right-pane { overflow: visible; }
+    .scroll-content { padding: 3rem 2rem; }
+    h1 { font-size: 15vw; }
+    .p-left { gap: 1rem; }
 }
