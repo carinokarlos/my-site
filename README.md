@@ -1,7 +1,8 @@
 # SYSTEM MANUAL: PERSONAL PORTFOLIO 
 
 > **Developer:** Carlos Miguel Cariño
-> **Architecture:** Single-Page Application (SPA) | **Design Spec:** Cyber-HUD / Windows IDE Hybrid
+> **Architecture:** Single-Page Application (SPA)
+> **Design Spec:** Cyber-HUD / Windows IDE Hybrid
 
 ---
 
