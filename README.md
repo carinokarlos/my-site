@@ -42,7 +42,7 @@ root/
 
 ---
 
-## 3. 🧩 Functional Modules
+## 3. Functional Modules
 
 ### 3.1 The "Zombie" Persistence Module
 
@@ -108,7 +108,7 @@ Push to GitHub and enable **GitHub Pages** in repository settings.
 
 ---
 
-## 5. 🕹️ User Manual: Terminal Commands
+## 5. User Manual: Terminal Commands
 
 Users can interact with the system via the CLI overlay. Below is a list of executable directives.
 
@@ -125,7 +125,7 @@ Users can interact with the system via the CLI overlay. Below is a list of execu
 
 ---
 
-## 6. 🛡️ Security & Anti-Spam
+## 6. Security & Anti-Spam
 
 The contact module implements a **Client-Side Transmission Lock** to prevent abuse of the EmailJS quota.
 
@@ -139,6 +139,6 @@ The contact module implements a **Client-Side Transmission Lock** to prevent abu
 ### 7. Legal & Attribution
 
 **Author:** Carlos Miguel Cariño
-**Role:** Fullstack Engineer
+**Role:** Fullstack Developer
 
 ---
