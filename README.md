@@ -1,84 +1,144 @@
-# Project Documentation: Personal Portfolio
-**Operator:** Carlos Miguel Cariño | **Theme:** Cyber-HUD / IDE Hybrid
+# SYSTEM MANUAL: PERSONAL PORTFOLIO 
 
-### 1. Executive Summary
+> **Developer:** Carlos Miguel Cariño
+> **Architecture:** Single-Page Application (SPA) | **Design Spec:** Cyber-HUD / Windows IDE Hybrid
 
-This project is a high-performance personal developer portfolio engineered to demonstrate full-stack competencies through a distinct visual language. The interface merges retro-futuristic HUD elements with a Windows-style IDE profile viewer, creating an immersive, data-driven user experience. Built entirely on Vanilla JavaScript, the application prioritizes raw performance, zero-dependency architecture, and native CSS3 animations over heavy frontend frameworks.
+---
 
-### 2. Technical Architecture
+## 1. Executive Summary
 
-#### 2.1 Frontend Composition
+This project represents a high-performance, Full-Stack developer portfolio engineered to simulate a functional operating system interface. By eschewing heavy frameworks (React/Vue) in favor of **Vanilla JavaScript (ES6+)** and **native CSS3**, the application achieves sub-second load times and 60fps animations on low-power devices. The interface merges a retro-futuristic HUD with practical IDE aesthetics to present professional competencies in an immersive, data-driven environment.
 
-The application utilizes a split-pane layout architecture to organize content hierarchy effectively:
+---
 
-* **Semantic HTML5:** Ensures accessibility and structural integrity.
-* **Advanced CSS3:** Utilizes CSS Variables (Custom Properties), Grid/Flexbox layouts, and Glassmorphism effects for a modern aesthetic without pre-processors.
-* **Typography:**
-* *Orbitron:* Employed for structural headers and UI controls.
-* *Space Mono:* Used for code blocks, terminal outputs, and data visualization.
+## 2. Technical Architecture
 
+### 2.1 File System Structure
 
-* **Vector Graphics:** Integrated **Lucide Icons** for lightweight, scalable interface elements.
+The project adheres to a strict separation of concerns, isolating structural logic, styling, and behavior.
 
-#### 2.2 Dynamic Modules
+```bash
+root/
+├── 📂 assets/
+│   ├── 📄 style.css       # Core styling, variables, and responsive grids
+│   └── 📄 main.js         # Application logic (IIFE Module Pattern)
+├── 📂 resume/
+│   ├── 📄 cm.png          # Avatar / Identity asset
+│   └── 📄 [cv_file].pdf   # Downloadable Resume
+├── 📄 index.html          # Semantic DOM structure & entry point
+└── 📄 README.md           # System documentation
 
-* **GitHub API Integration:** A custom fetch module retrieves live repository data. It features a robust **Fail-Safe Protocol** that automatically switches to a hardcoded data fallback if the GitHub API encounters rate limits or network blockages, ensuring content availability.
-* **Command Line Interface (CLI):** A functional terminal emulator embedded in the footer. It parses user input to execute system commands (`help`, `clear`, `matrix`) and launches interactive easter eggs.
-* **Secure Communication Relay:** A dual-channel messaging system powered by **EmailJS**, capable of dispatching administrative notifications and automated receipt confirmations simultaneously.
+```
 
-### 3. Configuration & Deployment
+### 2.2 Core Technology Stack
 
-To deploy this environment, the `CONFIG` object within the primary script must be initialized with valid credentials.
+| Layer | Technology | Justification |
+| --- | --- | --- |
+| **Markup** | **HTML5** | Semantic structure for SEO and accessibility. |
+| **Styling** | **CSS3 (Variables)** | Zero-build step customization via `:root` variables. |
+| **Logic** | **Vanilla JS (ES6)** | Raw performance; utilizes `Module Pattern` for scope isolation. |
+| **Icons** | **Lucide** | Lightweight SVG rendering with zero pixelation. |
+| **Backend** | **EmailJS / GitHub API** | Serverless architecture for data and communication. |
 
-#### 3.1 Environment Configuration
+---
 
-Navigate to the `System` module in `index.html` and populate the following keys:
+## 3. 🧩 Functional Modules
+
+### 3.1 The "Zombie" Persistence Module
+
+A custom storage handler that ensures user preferences and anti-spam locks persist across sessions.
+
+* **Redundancy:** writes to `localStorage`, `sessionStorage`, and `document.cookie` simultaneously.
+* **Self-Healing:** If one storage method is cleared by the user, the system reconstructs the data from the remaining sources on the next boot.
+
+### 3.2 Dynamic GitHub Integration
+
+The `Data.fetchGitHub()` module retrieves live repository statistics.
+
+* **Priority Queue:** Repositories listed in `HIGHLIGHT_REPOS` are rendered first with a "LIVE" indicator.
+* **Fail-Safe Protocol:** If the GitHub API rate limit is exceeded, the system seamlessly swaps to a hardcoded internal dataset, ensuring no UI breakage.
+
+### 3.3 Interactive CLI (Command Line Interface)
+
+A functional terminal emulator available on desktop and mobile.
+
+* **History Navigation:** Supports `ArrowUp` / `ArrowDown` to cycle through previous commands.
+* **Hidden Mechanics:** Includes easter eggs (`matrix`, `panic`) and system utilities (`ping`, `weather`).
+
+---
+
+## 4. ⚙️ Configuration & Setup
+
+To deploy this system, you must configure the `CONFIG` object located at the top of `assets/main.js`.
+
+### 4.1 Environment Variables
 
 ```javascript
 const CONFIG = {
-    GITHUB_USER: "carinokarlos", // Target GitHub Username
-    
-    // EmailJS Configuration
+    // Target GitHub account for fetching repos
+    GITHUB_USER: "carinokarlos", 
+
+    // EmailJS Credentials (Required for Contact Form)
     EMAILJS: {
-        KEY: "YOUR_PUBLIC_KEY",      // Public API Key
-        SERVICE: "YOUR_SERVICE_ID",  // Email Service ID
-        TEMPLATE_ADMIN: "YOUR_ADMIN_TEMPLATE", // Admin Notification Template ID
-        TEMPLATE_REPLY: "YOUR_REPLY_TEMPLATE"  // User Auto-Reply Template ID
+        KEY: "YOUR_PUBLIC_KEY",          // From Account Settings
+        SERVICE: "YOUR_SERVICE_ID",      // From Email Services
+        TEMPLATE_ADMIN: "template_admin_id", // To: You
+        TEMPLATE_REPLY: "template_reply_id"  // To: Visitor (Auto-Reply)
     },
 
-    // Repository Prioritization (Case-Insensitive Partial Match)
+    // Repositories to pin to the top of the list
     HIGHLIGHT_REPOS: ["SmartFaq", "Esmile", "iWash", "Facundo"]
 };
 
 ```
 
-#### 3.2 Template Variable Mapping
+### 4.2 Installation
 
-Ensure your EmailJS templates are configured to accept the following payload variables:
+1. **Clone the Repository:**
+```bash
+git clone https://github.com/carinokarlos/my-site.git
 
-* `{{user_name}}`: Sender's full name.
-* `{{user_email}}`: Sender's contact address.
-* `{{message}}`: Body of the inquiry.
+```
 
-### 4. Functional Specifications
 
-#### 🛡️ Spam Mitigation & Rate Limiting
+2. **Local Testing:**
+Open `index.html` directly in your browser or use a live server extension.
+3. **Deployment:**
+Push to GitHub and enable **GitHub Pages** in repository settings.
 
-The contact module implements a client-side locking mechanism using `localStorage`. Upon a successful transmission, the interface enforces a **30-minute cooldown period**, preventing automated scripts from exhausting the EmailJS API quota.
+---
 
-#### 🎮 Interactive CLI & Mini-Games
+## 5. 🕹️ User Manual: Terminal Commands
 
-The embedded terminal allows for user interaction beyond standard navigation. Executing the `game` command initializes **"Hacker Run"**, an ASCII-based endless runner game rendered directly in the DOM without canvas dependencies.
+Users can interact with the system via the CLI overlay. Below is a list of executable directives.
 
-#### 📡 Real-Time Telemetry
+| Command | Arguments | Description |
+| --- | --- | --- |
+| `help` | - | Lists all available system commands. |
+| `whoami` | - | Displays current user identity and session info. |
+| `open` | `[section]` | Navigates to `work`, `about`, or `contact`. |
+| `theme` | `blue/red/purple` | Hot-swaps the UI color palette instantly. |
+| `ping` | `[address]` | Simulates network latency test. |
+| `weather` | - | Fetches real-time weather for the user's location. |
+| `game` | - | Launches the hidden "Hacker Run" ASCII game. |
+| `matrix` | - | Toggles the digital rain background effect. |
 
-* **Uptime Monitor:** Tracks session duration since system initialization.
-* **Network Latency:** Simulates server response times to enhance the technical atmosphere.
+---
 
-### 5. Legal & Attribution
+## 6. 🛡️ Security & Anti-Spam
+
+The contact module implements a **Client-Side Transmission Lock** to prevent abuse of the EmailJS quota.
+
+1. **Trigger:** Upon successful message delivery.
+2. **Action:** The submit button is disabled and labeled `UPLINK_LOCKED`.
+3. **Duration:** A 30-minute cooldown timer is initiated.
+4. **Persistence:** The lock persists even if the browser is closed or refreshed (via the Zombie Module).
+
+---
+
+### 7. Legal & Attribution
 
 **Author:** Carlos Miguel Cariño
-**Role:** Fullstack Developer
-**Copyright:** © 2026 Carlos Miguel Cariño. All Rights Reserved.
+**Role:** Fullstack Engineer
 
-*This source code is provided for portfolio demonstration purposes. Unauthorized commercial redistribution or modification is prohibited.*
+---
