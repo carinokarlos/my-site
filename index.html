@@ -2,22 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>C.MIGUEL // DEVELOPER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.MIGUEL // PORTFOLIO</title>
+    
     <link rel="icon" type="image/png" sizes="50x50" href="resume/cm.png">
-    <link rel="stylesheet" href="style.css">
     
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/style.css">
     
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          // Replace with your Public Key from EmailJS Account Tab
-          emailjs.init("YWcE_pEySg9VCN6KU"); 
-       })();
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+
+    <script src="assets/main.js" defer></script>
 </head>
-<body>
+<body class="terminal-theme">
+
+    <canvas id="particleCanvas"></canvas>
+    <div class="grid-overlay"></div>
+    <div class="crt-overlay"></div>
 
     <div id="successOverlay" class="success-overlay">
         <div class="overlay-content">
@@ -27,284 +32,280 @@
         </div>
     </div>
 
-    <div class="grid-overlay"></div>
-
     <nav class="top-bar">
-        <div class="status-indicator">
-            <span class="blink"></span> SYSTEM_ACTIVE // 2026
-        </div>
+        <div class="logo-box">C.MIGUEL</div>
+        
         <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">Profile</a>
-            <a href="#contact">Connect</a>
+            <a href="#work" class="nav-item" onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'}); return false;">WORK</a>           
+            <a href="#about" class="nav-item" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'}); return false;">PROFILE</a>
+            <a href="#contact" class="nav-item" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); return false;">CONTACT</a>
         </div>
-        <button class="menu-toggle" id="menuBtn">Menu</button>
+        
+        <div class="sys-clock-wrapper">
+            <i data-lucide="clock" style="width:14px; opacity:0.7;"></i>
+            <span id="navClock" class="sys-time">00:00:00</span>
+        </div>
+        
+        <button class="menu-toggle" id="menuBtn">|||</button>
     </nav>
 
     <div class="mobile-overlay" id="mobileMenu">
-        <a href="#work" onclick="toggleMenu()">[ 01_WORK ]</a>
-        <a href="#about" onclick="toggleMenu()">[ 02_PROFILE ]</a>
-        <a href="#contact" onclick="toggleMenu()">[ 03_CONNECT ]</a>
-        <button class="menu-toggle" onclick="toggleMenu()" style="margin-top: 2rem;">CLOSE_TERMINAL</button>
+        <a href="#work" class="mobile-link">[ 01_WORK ]</a>
+        <a href="#about" class="mobile-link">[ 02_PROFILE ]</a>
+        <a href="#contact" class="mobile-link">[ 03_CONNECT ]</a>
     </div>
 
     <main class="main-layout">
-        <section class="left-pane">
+        
+        <section class="left-pane boot-hidden" style="transition-delay: 400ms;">
             <div class="hero-content">
-                <span class="version">LOC: 14.65N_121.05E // MNL</span>
-                <h1>CARLOS<br>MIGUEL</h1>
-                <p class="role-desc">Fullstack Engineer specialized in high-performance digital systems and technical minimalism.</p>
+                <div class="hud-header">
+                    <span class="version" id="locationTag">GPS: SCANNING_SATELLITES...</span>
+                    <span class="auth-status">ID: 0x27_MIGUEL_C_DEV</span>
+                </div>
+
+                <div class="identity-module">
+                    <h1 id="heroTitle" class="glitch-hover" data-value="CARLOS MIGUEL">
+                        CARLOS<br><span style="color: var(--fg); opacity: 0.8;">MIGUEL</span>
+                    </h1>
+                    <div class="accent-line"></div>
+                    <p class="role-desc">Fullstack Developer specializing in high-performance digital systems and technical minimalism.</p>
+                </div>
                 
+                <div class="vitals-module">
+                    <div class="vital-item">
+                        <span class="v-label">STACK_INTEGRITY</span>
+                        <div class="v-bar"><div class="v-fill pulse" style="width: 94%;"></div></div>
+                    </div>
+                    <div class="vital-item">
+                        <span class="v-label">NEURAL_SYNC_LOAD</span>
+                        <div class="v-bar"><div class="v-fill pulse-load"></div></div>
+                    </div>
+                </div>
+
                 <div class="social-icons">
-                    <a href="https://github.com/carlxsx" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
-                    <a href="https://linkedin.com/in/..." target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
-                    <a href="https://facebook.com/..." target="_blank" title="Facebook"><i data-lucide="facebook"></i></a>
-                    <a href="mailto:miguel.carlosc27@gmail.com" title="Email"><i data-lucide="mail"></i></a>
+                    <a href="https://github.com/carinokarlos" target="_blank" title="GITHUB"><i data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/carlos-miguel-cari%C3%B1o-492430253/" target="_blank" title="LINKEDIN"><i data-lucide="linkedin"></i></a>
+                    <a href="https://www.facebook.com/carinokarlos/" target="_blank" title="FACEBOOK"><i data-lucide="facebook"></i></a>
+                    <a href="mailto:miguel.carlosc27@gmail.com" title="EMAIL"><i data-lucide="mail"></i></a>
+                </div>
+
+                <div class="visualizer-container">
+                    <span class="v-label" style="margin-bottom: 8px;">SIGNAL_STRENGTH</span>
+                    <div class="visualizer">
+                        <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+                        <div class="wave"></div><div class="wave"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="right-pane">
+        <section class="right-pane boot-hidden" style="transition-delay: 600ms;">
             <div class="scroll-content">
                 
                 <div id="work" class="section-container">
-                    <div class="block-header">01 // SELECTED_PROJECTS</div>
-                    <div class="project-list">
-                        
-                        <a href="https://github.com/carlxsx/Esmile.git" target="_blank" class="project-row">
-                            <div class="p-left">
-                                <span class="p-num">01</span>
-                                <span class="p-name">ESMILE</span>
-                                <span class="p-tag">DENTAL_SYSTEM</span>
-                                <span class="p-status">[ APPOINTMENT_LOGIC + CLINIC_MGMT ]</span>
-                            </div>
-                            <i data-lucide="external-link"></i>
-                        </a>
-
-                        <a href="https://github.com/carlxsx/iWash.git" target="_blank" class="project-row">
-                            <div class="p-left">
-                                <span class="p-num">02</span>
-                                <span class="p-name">IWASH</span>
-                                <span class="p-tag">SERVICE_SCHEDULER</span>
-                                <span class="p-status">[ AUTO_WASH + ALL_MAINTENANCE_MODS ]</span>
-                            </div>
-                            <i data-lucide="external-link"></i>
-                        </a>
-
-                        <a href="https://github.com/carlxsx/SmartFaq.git" target="_blank" class="project-row">
-                            <div class="p-left">
-                                <span class="p-num">03</span>
-                                <span class="p-name">SMART FAQ</span>
-                                <span class="p-tag">ELECTRON_JS</span>
-                                <span class="p-status">[ CROSS_PLATFORM_DESKTOP_UI ]</span>
-                            </div>
-                            <i data-lucide="external-link"></i>
-                        </a>
-
-                        <a href="https://github.com/carlxsx/PakundoCars-Website.git" target="_blank" class="project-row">
-                            <div class="p-left">
-                                <span class="p-num">04</span>
-                                <span class="p-name">FACUNDO</span>
-                                <span class="p-tag">AUTOMOTIVE_COMMERCE</span>
-                                <span class="p-status">[ STOCK_MGMT + CRM ]</span>
-                            </div>
-                            <i data-lucide="external-link"></i>
-                        </a>    
-
+                    <div class="block-header">01 // LIVE_REPOSITORIES</div>
+                    <div class="project-list" id="githubFeed">
+                        <div class="cli-line" style="color: #555;">>> INITIALIZING_SECURE_UPLINK...</div>
                     </div>
                 </div>
 
                 <div id="about" class="section-container">
-                    <div class="block-header">02 // PROFILE_LOG</div>
-                    <div class="about-text">
-                        <p>I bridge the gap between design and engineering. Currently pursuing BSIT at National University — Fairview.</p>
-                        <p>Specialization: MERN Stack, Electron Desktop Apps, and Scalable Cloud Infrastructure.</p>
-                        <a href="resume/Carlos-Miguel-Angeles-Carino.pdf" class="cv-btn">
-                            <i data-lucide="file-text"></i> DOWNLOAD_CV.PDF
-                        </a>
+                    <div class="block-header">02 // SOURCE_CODE</div>
+                    
+                    <div class="profile-grid">
+                        <div class="ide-wrapper">
+                            <div class="ide-header">
+                                <div class="file-info">
+                                    <span class="vs-icon">JS</span>
+                                    <span class="file-name">identity.json</span>
+                                </div>
+                                <div class="window-controls">
+                                    <div class="win-btn minimize"><span>&#9472;</span></div>
+                                    <div class="win-btn maximize"><span>&#9744;</span></div>
+                                    <div class="win-btn close"><span>&#10005;</span></div>
+                                </div>
+                            </div>
+                            <div class="ide-body">
+                                <div class="code-line"><span class="ln">01</span> <span class="c-w">{</span></div>
+                                <div class="code-line"><span class="ln">02</span> &nbsp;&nbsp;<span class="c-k">"firstName"</span>: <span class="c-s">"Carlos Miguel"</span>,</div>
+                                <div class="code-line"><span class="ln">03</span> &nbsp;&nbsp;<span class="c-k">"lastName"</span>: <span class="c-s">"Cariño"</span>,</div>
+                                <div class="code-line"><span class="ln">04</span> &nbsp;&nbsp;<span class="c-k">"degree"</span>: <span class="c-s">"BS in Information Technology"</span>,</div>
+                                <div class="code-line"><span class="ln">05</span> &nbsp;&nbsp;<span class="c-k">"specialization"</span>: <span class="c-s">"Mobile & Internet Technologies"</span>,</div>
+                                <div class="code-line"><span class="ln">06</span> &nbsp;&nbsp;<span class="c-k">"university"</span>: <span class="c-s">"National University - Fairview"</span>,</div>
+                                <div class="code-line"><span class="ln">07</span> &nbsp;&nbsp;<span class="c-k">"location"</span>: <span class="c-s">"Caloocan, PH"</span>,</div>
+                                <div class="code-line"><span class="ln">08</span> &nbsp;&nbsp;<span class="c-k">"status"</span>: <span class="c-v">true</span>,</div>
+                                <div class="code-line"><span class="ln">09</span> &nbsp;&nbsp;<span class="c-k">"age"</span>: <span class="c-n">22</span></div>
+                                <div class="code-line"><span class="ln">10</span> <span class="c-w">}</span></div>
+                                <div class="cursor-blink">_</div>
+                            </div>
+                        </div>
+
+                        <div class="profile-tools">
+                            <div class="skill-terminal">
+                                <div class="skill-line"><span class="prompt">CM:\admin\carinokarlos></span> git status</div>
+                                <div class="skill-line" style="color:#888;">On branch main</div>
+                                <div class="skill-line"><span class="prompt">CM:\admin\carinokarlos></span> cat skills.txt</div>
+                                <div class="skill-line">[ MERN ] [ NODE.JS ] [ TAILWIND ]</div>
+                                <div class="skill-line">[ PHP ] [ SQL ] [ JAVA ]</div>
+                                <div class="skill-line"><span class="prompt">CM:\admin\carinokarlos></span> <span class="cmd-cursor"></span></div>
+                            </div>
+
+                            <div class="cv-file-card">
+                                <div class="cv-card-header">:: FILE_TRANSFER</div>
+                                <div class="cv-card-body">
+                                    <div class="file-details">
+                                        <span class="file-name">Carlos-Miguel-Angeles-Carino.pdf</span>
+                                        <span class="file-meta">ENCRYPTED // 1.2MB</span>
+                                    </div>
+                                    <a href="resume/Carlos-Miguel-Angeles-Carino.pdf" class="cv-download-btn" target="_blank">GET</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div id="contact" class="section-container">
                     <div class="block-header">03 // ESTABLISH_COMM</div>
-                    <form class="terminal-form">
-                        <div class="form-row">
-                            <label>> NAME:</label>
-                            <input type="text" spellcheck="false" placeholder="REQUIRED">
+                    
+                    <div class="form-wrapper secure-console">
+                        <div class="console-header">
+                            <div class="console-title">
+                                <i data-lucide="radio-receiver"></i> 
+                                <span>SECURE_UPLINK // V.1.0.4</span>
+                            </div>
+                            <div class="signal-meter">
+                                <span class="signal-bar" style="height: 40%"></span>
+                                <span class="signal-bar" style="height: 70%"></span>
+                                <span class="signal-bar" style="height: 100%"></span>
+                            </div>
                         </div>
-                        <div class="form-row">
-                            <label>> EMAIL:</label>
-                            <input type="email" spellcheck="false" placeholder="REQUIRED">
+
+                        <form class="terminal-form" id="contactForm">
+                            <div class="form-row">
+                                <label>UID_SENDER:</label>
+                                <div class="input-group">
+                                    <input type="text" id="user_name" required placeholder="Identify yourself...">
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <label>RETURN_PATH:</label>
+                                <div class="input-group">
+                                    <input type="email" id="user_email" required placeholder="Enter distinct email...">
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <label>DATA_PACKET:</label>
+                                <div class="input-group">
+                                    <textarea id="message" rows="4" required placeholder="Type transmission content..."></textarea>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                <span class="btn-text">>> INITIATE_TRANSMISSION</span>
+                                <span class="btn-bg"></span>
+                            </button>
+                        </form>
+
+                        <div class="console-footer">
+                            <span>ENCRYPTION: <b>AES-256</b></span>
+                            <span>LATENCY: <b id="latency">24ms</b></span>
                         </div>
-                        <div class="form-row">
-                            <label>> MSG:</label>
-                            <textarea rows="3" placeholder="ENTER MESSAGE..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">EXECUTE_SEND</button>
-                    </form>
+                    </div>
                 </div>
 
-                <footer class="bottom-footer">
-                    <div class="footer-line"></div>
-                    <p>© 2026 // CARLOS MIGUEL CARIÑO // ALL_RIGHTS_RESERVED</p>
+                <footer class="system-footer">
+                    <div class="footer-scanline"></div>
+
+                    <div class="footer-grid">
+                        <div class="f-unit">
+                            <h4 class="f-head">:: OPERATOR_ID</h4>
+                            <div class="f-identity-box">
+                                <img src="resume/cm.png" alt="CM_LOGO" class="id-avatar">
+                                <div class="id-details">
+                                    <p class="f-text">Carlos Miguel Cariño</p>
+                                    <p class="f-dim">Fullstack Developer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="f-unit">
+                            <h4 class="f-head">:: ESTABLISH_UPLINK</h4>
+                            <div class="link-grid">
+                                <a href="https://github.com/carinokarlos" target="_blank" class="cmd-link">
+                                    <i data-lucide="github"></i> <span>/ACCESS_REPO</span>
+                                </a>
+                                <a href="https://linkedin.com/in/carlos-miguel-cari%C3%B1o-492430253/" target="_blank" class="cmd-link">
+                                    <i data-lucide="linkedin"></i> <span>/LINKEDIN_PROFILE</span>
+                                </a>
+                                <a href="mailto:miguel.carlosc27@gmail.com" class="cmd-link">
+                                    <i data-lucide="mail"></i> <span>/TRANSMIT_MAIL</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="f-unit">
+                            <h4 class="f-head">:: PGP_KEY_GEN</h4>
+                            <div class="cipher-box">
+                                <span class="c-char">A7</span><span class="c-char">F2</span><span class="c-char">99</span><span class="c-char">X1</span>
+                                <span class="c-char">B4</span><span class="c-char">C8</span><span class="c-char">00</span><span class="c-char">D3</span>
+                            </div>
+                            <div style="font-size:0.55rem; color:#555; margin-top:5px;">2048-BIT ENCRYPTION ENABLED</div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bar">
+                        <div class="fb-col left">
+                            <span class="copy-text">© 2026 // CARLOS MIGUEL CARIÑO</span>
+                        </div>
+                        <div class="fb-col center">
+                            <div class="fb-line"></div>
+                            <div class="fb-box">END_OF_LINE</div>
+                            <div class="fb-line"></div>
+                        </div>
+                        <div class="fb-col right">
+                            <a href="#" id="scrollTopBtn" class="top-btn">
+                                <span class="btn-text">INIT_ASCENT</span>
+                                <span class="btn-icon">▲</span>
+                            </a>
+                        </div>
+                    </div>
                 </footer>
             </div>
         </section>
     </main>
 
-    <script>
-        // 1. Initialize Lucide Icons
-        lucide.createIcons();
+    <div class="cli-container" id="cliContainer">
+        <div class="cli-header">
+            <div class="terminal-title">TERMINAL_UPLINK // C.MIGUEL_OS</div>
+            <button id="explicitExit" class="exit-terminal-btn">×</button>
+        </div>
+        <div class="cli-body">
+            <div class="cli-output" id="cliOutput">
+                <div class="cli-line">C.MIGUEL(R) SYSTEM_BOOT_v10.7.5</div>
+                <div class="cli-line" style="color: rgba(34, 197, 94, 0.5);">CHECKING_MEMORY... OK</div>
+                <div class="cli-line">Type 'help' to interface with the kernel.</div>
+            </div>
 
-        // 2. Mobile Menu Toggle Logic
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+            <div id="gameArea" style="display:none; border-top: 1px dashed #22c55e33; margin-top: 10px; padding-top: 10px;">
+                <div class="cli-line" style="color: #fbbf24;">>> HACKER_RUN.exe EXEC [SPACE] TO JUMP</div>
+                <pre id="gameScreen" style="font-family: 'Space Mono'; line-height: 1; color: #22c55e;"></pre>
+                <div id="scoreBoard" style="font-family: 'Orbitron'; font-size: 0.8rem; margin-top: 5px;">SCORE: 000</div>
+            </div>
 
-        function toggleMenu() {
-            mobileMenu.classList.toggle('active');
-            menuBtn.innerText = mobileMenu.classList.contains('active') ? 'Close' : 'Menu';
-        }
-        menuBtn.addEventListener('click', toggleMenu);
+            <div class="cli-input-area">
+                <span class="prompt-user">CM:\admin\carinokarlos></span>
+                <input type="text" id="cliInput" autocomplete="off" autofocus>
+            </div>
+        </div>
+    </div>
 
-        // 3. Intelligent Smooth Scroll Logic
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId && targetId.startsWith('#')) {
-                    e.preventDefault();
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        if (window.innerWidth > 900) {
-                            const scrollContainer = document.querySelector('.right-pane');
-                            const targetPos = targetSection.offsetTop;
-                            scrollContainer.scrollTo({ top: targetPos, behavior: 'smooth' });
-                        } else {
-                            const offset = 80; 
-                            const bodyRect = document.body.getBoundingClientRect().top;
-                            const elementRect = targetSection.getBoundingClientRect().top;
-                            const elementPosition = elementRect - bodyRect;
-                            const offsetPosition = elementPosition - offset;
-                            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                            if (mobileMenu.classList.contains('active')) toggleMenu();
-                        }
-                    }
-                }
-            });
-        });
+    <button id="cliTrigger" class="cli-trigger">>_ TERMINAL</button>
 
-        // 4. Live System Clock (Manila Time)
-        function updateClock() {
-            const statusElement = document.querySelector('.status-indicator');
-            if (!statusElement) return;
-            const now = new Date();
-            const options = { 
-                timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', 
-                second: '2-digit', hour12: false 
-            };
-            const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
-            statusElement.innerHTML = `<span class="blink"></span> SYSTEM_ACTIVE // ${timeString} // 2026`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock(); 
-
-        // 5. Terminal Typewriter Effect for Hero
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = ''; 
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        window.addEventListener('load', () => {
-            const heroTitle = document.querySelector('h1');
-            if (heroTitle) {
-                typeWriter(heroTitle, "CARLOS MIGUEL", 120); 
-            }
-        });
-
-        // 6. Final Form Submission with Dual EmailJS Templates
-        const contactForm = document.querySelector('.terminal-form');
-        const successOverlay = document.getElementById('successOverlay');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const btn = contactForm.querySelector('.submit-btn');
-                const inputs = contactForm.querySelectorAll('input, textarea');
-                let isError = false;
-
-                document.querySelectorAll('.form-row').forEach(row => row.classList.remove('error'));
-
-                inputs.forEach(input => {
-                    if (input.value.trim() === "") {
-                        isError = true;
-                        input.closest('.form-row').classList.add('error');
-                    }
-                });
-
-                if (isError) {
-                    btn.innerText = "ERROR: DATA_MISSING";
-                    btn.style.setProperty('background-color', '#ff0000', 'important');
-                    btn.style.setProperty('color', '#ffffff', 'important');
-                    setTimeout(() => {
-                        btn.innerText = "EXECUTE_SEND";
-                        btn.style.backgroundColor = "";
-                        btn.style.color = "";
-                    }, 2000);
-                    return;
-                }
-
-                btn.innerText = "STATUS: SENDING_VIA_RELAY...";
-                btn.style.opacity = "0.7";
-                
-                const templateParams = {
-                    from_name: inputs[0].value,
-                    reply_to: inputs[1].value,
-                    message: inputs[2].value,
-                    date: new Date().toLocaleString()
-                };
-
-                const serviceID = 'service_2fb81h6';
-                const adminTemplateID = 'template_h0gz7ix'; // Template that emails you
-                const autoReplyTemplateID = 'template_jqj3873'; // REPLACE THIS with your new ID
-
-                // Trigger Email to YOU
-                emailjs.send(serviceID, adminTemplateID, templateParams)
-                    .then(() => {
-                        // Trigger Auto-Reply to USER
-                        emailjs.send(serviceID, autoReplyTemplateID, templateParams);
-
-                        // Show Success Overlay
-                        successOverlay.classList.add('active');
-                        btn.innerText = "COMMAND_EXECUTED_SUCCESSFULLY";
-                        btn.style.setProperty('background-color', 'var(--accent)', 'important');
-                        btn.style.setProperty('color', '#000000', 'important');
-                        btn.style.opacity = "1";
-                        
-                        contactForm.reset();
-                        
-                        setTimeout(() => {
-                            successOverlay.classList.remove('active');
-                            btn.innerText = "EXECUTE_SEND";
-                            btn.style.backgroundColor = "";
-                            btn.style.color = "";
-                        }, 3000);
-
-                    }, (error) => {
-                        console.error('FAILED...', error);
-                        btn.innerText = "CRITICAL_ERROR_COMM_FAILED";
-                        btn.style.setProperty('background-color', '#ff0000', 'important');
-                        btn.style.opacity = "1";
-                    });
-            });
-        }
-    </script>
 </body>
 </html>
