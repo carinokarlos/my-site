@@ -456,6 +456,28 @@ const System = (() => {
             cliContainer.style.display = 'none';
         });
 
+        // --- GLOBAL SHORTCUT: Toggle Terminal with Backtick (`) ---
+        document.addEventListener('keydown', (e) => {
+            // Check for Backtick key (`)
+            if (e.key === '`') {
+                e.preventDefault(); // Stop the character ` from being typed
+                
+                if (cliContainer.style.display === 'flex') {
+                    // Close if open
+                    cliContainer.style.display = 'none';
+                } else {
+                    // Open if closed
+                    cliContainer.style.display = 'flex';
+                    setTimeout(() => cliInput.focus(), 50);
+                }
+            }
+            
+            // Optional: Close with ESC key
+            if (e.key === 'Escape' && cliContainer.style.display === 'flex') {
+                cliContainer.style.display = 'none';
+            }
+        });
+
         // CLI Key Handling
         cliInput.addEventListener('keydown', async (e) => {
             // History Navigation (Arrow Up/Down)
