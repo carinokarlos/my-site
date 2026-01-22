@@ -518,21 +518,26 @@ const System = (() => {
                 switch (cmd) {
                     case 'help':
                         UI.printLine(`<div class="cli-grid">
-                            <span>HELP</span> <span>List commands</span>
-                            <span>CLEAR</span> <span>Clear screen</span>
-                            <span>WHOAMI</span> <span>User Identity</span>
-                            <span>ASCII</span> <span>Show Logo</span>
-                            <span>LS</span> <span>List files</span>
-                            <span>OPEN [file]</span> <span>Navigation</span>
-                            <span>SYS</span> <span>System Specs</span>
-                            <span>WEATHER</span> <span>Current Temp</span>
-                            <span>THEME [col]</span> <span>red / blue / green</span>
-                            <span>MATRIX</span> <span>Visualizer</span>
-                            <span>PING [site]</span> <span>Network Test</span>
-                            <span>CALC [eq]</span> <span>Calculator</span>
-                            <span>HACK [tgt]</span> <span>Brute Force Sim</span>
-                            <span>GAME</span> <span>Hacker Run</span>
-                            <span>PANIC</span> <span>Kill System</span>
+                            <span>HELP</span> <span>List all commands</span>
+                            <span>CLEAR / CLS</span> <span>Clear terminal buffer</span>
+                            <span>WHOAMI</span> <span>Identify user</span>
+                            <span>ASCII</span> <span>Display system logo</span>
+                            <span>LS</span> <span>List directory files</span>
+                            <span>OPEN [file]</span> <span>Nav: about, work, contact</span>
+                            <span>SYS</span> <span>Display system specs</span>
+                            <span>IP / LOCATE</span> <span>Trace network origin</span>
+                            <span>WEATHER</span> <span>Local atmospheric scan</span>
+                            <span>SOCIALS</span> <span>Establish comms uplink</span>
+                            <span>CV / RESUME</span> <span>Download personnel file</span>
+                            <span>THEME [clr]</span> <span>Set: red, blue, purple</span>
+                            <span>PING [addr]</span> <span>Test network latency</span>
+                            <span>CALC [eq]</span> <span>Calculate (e.g. 5*5)</span>
+                            <span>HACK [trgt]</span> <span>Run brute force sim</span>
+                            <span>MATRIX</span> <span>Toggle visualizer</span>
+                            <span>GAME</span> <span>Execute 'Hacker Run'</span>
+                            <span>PANIC</span> <span>Trigger kernel error</span>
+                            <span>REBOOT</span> <span>Restart system</span>
+                            <span>EXIT</span> <span>Terminate session</span>
                         </div>`);
                         break;
 
@@ -645,6 +650,34 @@ const System = (() => {
                         UI.printLine(`<span style="color:var(--accent)">about.txt</span>`);
                         UI.printLine(`<span style="color:var(--accent)">work.json</span>`);
                         UI.printLine(`<span style="color:var(--accent)">contact.exe</span>`);
+                        break;
+
+                    case 'socials':
+                    case 'connect':
+                        UI.printLine(">> ESTABLISHING_LINK_CHANNELS:");
+                        UI.printLine(" - <a href='https://github.com/carinokarlos' target='_blank' style='color:#fff'>GITHUB</a>");
+                        UI.printLine(" - <a href='https://linkedin.com/in/carlos-miguel-cari%C3%B1o-492430253/' target='_blank' style='color:#fff'>LINKEDIN</a>");
+                        UI.printLine(" - <a href='mailto:miguel.carlosc27@gmail.com' style='color:#fff'>EMAIL_UPLINK</a>");
+                        break;
+
+                    case 'ip':
+                    case 'locate':
+                        UI.printLine(">> SCANNING_NETWORK_NODE...");
+                        UI.printLine(`>> CLIENT_DATA: ${state.visitorLog || "UNKNOWN_ORIGIN"}`, 'cli-success');
+                        break;
+
+                    case 'cv':
+                    case 'resume':
+                        UI.printLine(">> RETRIEVING_SECURE_FILE...");
+                        setTimeout(() => {
+                            const link = document.createElement('a');
+                            link.href = 'resume/Carlos-Miguel-Angeles-Carino.pdf';
+                            link.download = 'Carlos-Miguel-Angeles-Carino.pdf';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                            UI.printLine(">> DOWNLOAD_INITIATED.", 'p-status pulse');
+                        }, 800);
                         break;
 
                     case 'open':
