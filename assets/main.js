@@ -530,7 +530,7 @@ const System = (() => {
                             <span>SOCIALS</span> <span>Establish comms uplink</span>
                             <span>CV / RESUME</span> <span>Download personnel file</span>
                             <span>THEME [clr]</span> <span>Set: red, blue, purple</span>
-                            <span>PING [addr]</span> <span>Test network latency</span>
+                            <span>PING [site]</span> <span>Test network latency</span>
                             <span>CALC [eq]</span> <span>Calculate (e.g. 5*5)</span>
                             <span>HACK [trgt]</span> <span>Run brute force sim</span>
                             <span>MATRIX</span> <span>Toggle visualizer</span>
