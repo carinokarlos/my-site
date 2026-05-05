@@ -12,22 +12,19 @@
   <script src="assets/main.js" defer></script>
 </head>
 <body>
-
   <!-- GLOBAL OVERLAYS & UI -->
   <div id="theme-flash"></div>
-  <div id="progress-bar"></div>
   <div class="cursor-dot"></div>
   <div class="cursor-ring"></div>
-  
-  <div id="focus-indicator">Focus Mode — Press F to exit</div>
+  <div id="focus-indicator">[ F ] Focus</div>
 
   <div id="section-dots">
-    <a href="#about" class="section-dot active" title="About"></a>
-    <a href="#skills" class="section-dot" title="Skills"></a>
-    <a href="#experience" class="section-dot" title="Experience"></a>
-    <a href="#projects" class="section-dot" title="Projects"></a>
-    <a href="#certifications" class="section-dot" title="Certifications"></a>
-    <a href="#contact" class="section-dot" title="Contact"></a>
+    <a href="#about" class="section-dot active" aria-label="About"></a>
+    <a href="#skills" class="section-dot" aria-label="Skills"></a>
+    <a href="#experience" class="section-dot" aria-label="Experience"></a>
+    <a href="#projects" class="section-dot" aria-label="Projects"></a>
+    <a href="#certifications" class="section-dot" aria-label="Certifications"></a>
+    <a href="#contact" class="section-dot" aria-label="Contact"></a>
   </div>
 
   <!-- NAVBAR -->
@@ -35,50 +32,52 @@
     <a href="#" class="nav-brand" aria-label="Home">CMC</a>
     <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
       <a href="#about" class="active">About</a>
+      <a href="#skills" class="hide-tablet">Skills</a>
       <a href="#experience">Experience</a>
+      <a href="#projects" class="hide-tablet">Projects</a>
+      <a href="#certifications" class="hide-tablet">Certs</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-controls">
-      <div class="burger-wrapper">
-        <button class="burger-btn" id="burger-toggle" aria-label="Toggle Extra Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-        <div class="burger-dropdown" id="burger-dropdown">
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certs</a>
-          <hr class="burger-divider">
-          <button id="burger-theme-toggle">Dark Mode</button>
-        </div>
-      </div>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="burger-btn" id="burger-toggle" aria-label="Open Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
     </div>
   </header>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div id="nav-drawer">
+    <button id="drawer-close" class="drawer-close" aria-label="Close menu">×</button>
+    <nav class="drawer-links">
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="drawer-theme-toggle" class="drawer-theme">Dark Mode</button>
+  </div>
 
   <!-- MAXIMALIST HERO -->
   <section id="hero-max" class="hero-max">
     <div class="marquee-container up-tilt">
       <div class="marquee font-mono">
-        PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL • PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL • PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL • PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL •
+        PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL • PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL • PHP • PYTHON • LARAVEL • FLASK • SQL • DOCKER • REDIS • MYSQL •
       </div>
     </div>
     <div class="marquee-container down-tilt">
       <div class="marquee reverse font-mono">
-        FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO • FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO • FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO • FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO •
+        FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO • FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO • FULL-STACK • IOT INTEGRATION • CLOUD FOUNDATIONS • ZKTECO •
       </div>
     </div>
     <div class="hero-title-wrap">
-      <h1 class="massive-text">CARLOS<br>MIGUEL</h1>
-      <p class="hero-subtext font-mono">
-        Building robust, scalable solutions bridging <br> 
-        <span class="highlight">full-stack web</span> & <span class="highlight">IoT technologies.</span>
-      </p>
-      <div class="hero-stats">
-        <span>3+ Years</span>
-        <span class="stat-sep">|</span>
-        <span>10K+ Users</span>
-        <span class="stat-sep">|</span>
-        <span>5 Projects</span>
-      </div>
+      <h1 class="massive-text">CARLOS<br><i>MIGUEL</i></h1>
+      <p class="hero-subtext font-mono">BIOMETRIC SYNC · IOT HARDWARE · CLOUD PIPELINES</p>
     </div>
   </section>
 
@@ -86,40 +85,50 @@
 
     <!-- LEFT PANE -->
     <aside class="left-pane">
-      <div class="profile-wrapper">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=150&h=150" alt="Carlos Miguel" class="profile-pic">
-      </div>
-      <div class="name-block">
-        <h1>Carlos Miguel<br>Angeles Cariño</h1>
-        <div class="typewriter-wrap" aria-live="polite">
-          <span class="tw-label">Role</span>
-          <span id="typewriter"></span>
+      <div class="mobile-header-row">
+        <div class="profile-pic-monogram">CMC</div>
+        <div>
+          <div class="name-block">
+            <h1>Carlos Miguel<br>Angeles Cariño</h1>
+            <div class="typewriter-wrap" aria-live="polite">
+              <span class="tw-label">Role</span>
+              <span id="typewriter"></span>
+            </div>
+          </div>
+          <a href="#contact" class="status-badge">
+            <span class="status-dot"></span> Open to opportunities
+          </a>
         </div>
       </div>
-      <p class="tagline">Building robust, scalable solutions bridging full-stack web and IoT technologies.</p>
-      <address class="contact-block">
-        <div class="contact-row">
-          <span class="lbl">Email</span>
-          <a href="mailto:miguel.carlosc27@gmail.com">miguel.carlosc27@gmail.com</a>
-        </div>
-        <div class="contact-row">
-          <span class="lbl">Phone</span>
-          <span>0924-100-9163</span>
-        </div>
-        <div class="contact-row">
-          <span class="lbl">Based</span>
-          <span>Caloocan City, PH</span>
-        </div>
-      </address>
-      <div class="social-links">
-        <a href="https://carinokarlos.github.io" class="social-link" target="_blank" rel="noopener">Portfolio</a>
-        <a href="https://linkedin.com/in/carlos-miguel-cariño-492430253" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/carinokarlos" class="social-link" target="_blank" rel="noopener">GitHub</a>
+
+      <p class="tagline">Full-Stack Developer crafting resilient, data-driven systems from edge to cloud.</p>
+      
+      <div class="contact-icons">
+        <a href="https://github.com/carinokarlos" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        </a>
+        <a href="https://linkedin.com/in/carlos-miguel-cariño-492430253" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://carinokarlos.github.io" target="_blank" rel="noopener" aria-label="Portfolio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </a>
       </div>
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        Open to opportunities
+
+      <div class="wide-timeline">
+        <strong>2026</strong> — BS Information Technology<br>
+        <strong>2026</strong> — Intern, Newtrends Corp.<br>
+        <strong>2025</strong> — Intern, Western Guaranty
       </div>
+
+      <nav class="mobile-section-nav" id="mobile-section-nav">
+        <a href="#about" class="active">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certs</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </aside>
 
     <!-- RIGHT PANE -->
@@ -155,20 +164,20 @@
         </div>
 
         <div class="skill-group" data-category="Languages">
-          <div class="skill-group-label">Languages</div>
+          <div class="skill-group-label">Languages <span class="skill-prof">3+ yrs</span></div>
           <div class="tag-cloud">
-            <span class="tag">PHP</span>
+            <span class="tag primary">PHP</span>
             <span class="tag">Java</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Python</span>
+            <span class="tag primary">JavaScript</span>
+            <span class="tag primary">Python</span>
             <span class="tag">SQL</span>
           </div>
         </div>
         <div class="skill-group" data-category="Frameworks">
-          <div class="skill-group-label">Frameworks</div>
+          <div class="skill-group-label">Frameworks <span class="skill-prof">2+ yrs</span></div>
           <div class="tag-cloud">
-            <span class="tag">Flask</span>
-            <span class="tag">Laravel</span>
+            <span class="tag primary">Flask</span>
+            <span class="tag primary">Laravel</span>
             <span class="tag">Tailwind CSS</span>
             <span class="tag">Bootstrap</span>
             <span class="tag">SQLAlchemy</span>
@@ -176,7 +185,7 @@
           </div>
         </div>
         <div class="skill-group" data-category="Tools">
-          <div class="skill-group-label">Tools</div>
+          <div class="skill-group-label">Tools <span class="skill-prof">2+ yrs</span></div>
           <div class="tag-cloud">
             <span class="tag">MySQL</span>
             <span class="tag">SQL Server</span>
@@ -188,7 +197,7 @@
           </div>
         </div>
         <div class="skill-group" data-category="Specializations">
-          <div class="skill-group-label">Specializations</div>
+          <div class="skill-group-label">Specializations <span class="skill-prof">Domain</span></div>
           <div class="tag-cloud">
             <span class="tag">Full-Stack Dev</span>
             <span class="tag">IoT Integration</span>
@@ -236,59 +245,79 @@
         </div>
         <div class="project-grid">
 
-          <div class="project-card" data-expanded="Built to resolve nationwide attendance discrepancies. The system features a custom polling engine to extract logs from localized devices regardless of network latency, queuing them safely in Redis before merging into the central database.">
+          <div class="project-card" style="--card-accent: #3b82f6;" data-expanded="Built to resolve nationwide attendance discrepancies. The system features a custom polling engine to extract logs from localized devices regardless of network latency, queuing them safely in Redis before merging into the central database.">
+            <div class="project-metric">Live</div>
             <div class="project-header">
               <div class="project-name">NIC Synapse / BioCentral</div>
               <span class="project-year">2026</span>
             </div>
             <ul class="project-bullets">
-              <li>Flask middleware connecting nationwide ZKTeco biometric devices to HR master database with real-time attendance sync.</li>
-              <li>Implemented async Celery/Redis task queues and Flask-SocketIO WebSockets.</li>
+              <li>Flask middleware connecting nationwide ZKTeco biometric devices to HR master database.</li>
+              <li>Async Celery/Redis queues.</li>
             </ul>
-            <div class="project-tags tag-cloud">
+            <div class="project-tags">
               <span class="tag">Flask</span><span class="tag">Redis</span><span class="tag">ZKTeco</span>
+            </div>
+            <div class="project-footer-row">
+              <div class="project-view-details">View Details &rarr;</div>
+              <a href="#" class="project-icon-link" aria-label="View Project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
             </div>
           </div>
 
-          <div class="project-card" data-expanded="Reduced manual documentation time by 80%. This tool crawls local network drives to extract image metadata and links it via a complex multi-database query mapping internal inventory codes directly to visual assets.">
+          <div class="project-card" style="--card-accent: #10b981;" data-expanded="Reduced manual documentation time by 80%. This tool crawls local network drives to extract image metadata and links it via a complex multi-database query mapping internal inventory codes directly to visual assets.">
+            <div class="project-metric">80%</div>
             <div class="project-header">
               <div class="project-name">Department Store Request Template</div>
               <span class="project-year">2026</span>
             </div>
             <ul class="project-bullets">
-              <li>Flask automation tool for generating retail request templates with real-time SSE progress tracking.</li>
-              <li>Integrated SQL Server and MySQL for cross-database hierarchy mapping.</li>
+              <li>Flask automation tool for retail request templates with SSE tracking.</li>
+              <li>Cross-database hierarchy mapping.</li>
             </ul>
-            <div class="project-tags tag-cloud">
+            <div class="project-tags">
               <span class="tag">Flask</span><span class="tag">SQL Server</span><span class="tag">SSE</span>
+            </div>
+            <div class="project-footer-row">
+              <div class="project-view-details">View Details &rarr;</div>
+              <a href="https://github.com/carinokarlos" class="project-icon-link" aria-label="View Code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
             </div>
           </div>
 
-          <div class="project-card" data-expanded="A fully end-to-end prototype bridging software state and physical mechanical action. Custom relays were wired to a Raspberry Pi cluster listening for webhooks from the booking server to physically initiate water jets.">
+          <div class="project-card" style="--card-accent: #f59e0b;" data-expanded="A fully end-to-end prototype bridging software state and physical mechanical action. Custom relays were wired to a Raspberry Pi cluster listening for webhooks from the booking server to physically initiate water jets.">
+            <div class="project-metric">IoT</div>
             <div class="project-header">
               <div class="project-name">iWash: Car Wash Booking</div>
               <span class="project-year">2025</span>
             </div>
             <ul class="project-bullets">
               <li>Assembled and wired IoT hardware for custom automation prototypes.</li>
-              <li>Integrated physical hardware control with web-based software requests.</li>
+              <li>Integrated physical hardware control with web requests.</li>
             </ul>
-            <div class="project-tags tag-cloud">
+            <div class="project-tags">
               <span class="tag">Python</span><span class="tag">IoT</span><span class="tag">MySQL</span>
+            </div>
+            <div class="project-footer-row">
+              <div class="project-view-details">View Details &rarr;</div>
+              <a href="https://github.com/carinokarlos" class="project-icon-link" aria-label="View Code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
             </div>
           </div>
 
-          <div class="project-card" data-expanded="Scaled from a single clinic prototype to a multi-tenant platform handling 10,000+ dynamic time slots. Automated SMS flows practically eliminated patient no-shows and heavily optimized the clinic's daily revenue flow.">
+          <div class="project-card" style="--card-accent: #6366f1;" data-expanded="Scaled from a single clinic prototype to a multi-tenant platform handling 10,000+ dynamic time slots. Automated SMS flows practically eliminated patient no-shows and heavily optimized the clinic's daily revenue flow.">
+            <div class="project-metric">10K+</div>
             <div class="project-header">
               <div class="project-name">E-Smile Appointment System</div>
               <span class="project-year">2024</span>
             </div>
             <ul class="project-bullets">
-              <li>Built and deployed an appointment system managing 10,000+ bookings for dental clinics.</li>
-              <li>Implemented automated SMS alerts via PHPMailer, reducing no-shows by 30%.</li>
+              <li>Built and deployed an appointment system managing 10,000+ bookings.</li>
+              <li>Automated SMS alerts via PHPMailer, reducing no-shows by 30%.</li>
             </ul>
-            <div class="project-tags tag-cloud">
+            <div class="project-tags">
               <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Tailwind</span>
+            </div>
+            <div class="project-footer-row">
+              <div class="project-view-details">View Details &rarr;</div>
+              <a href="https://github.com/carinokarlos" class="project-icon-link" aria-label="View Code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
             </div>
           </div>
 
@@ -328,7 +357,17 @@
           <h2>Contact</h2>
           <span class="section-index">06</span>
         </div>
-        <p class="contact-intro">Open to new roles, collaborations, and technical conversations.</p>
+        
+        <h3 class="contact-cta-head">Let's build something.</h3>
+        <div class="contact-cta-buttons">
+          <a href="mailto:miguel.carlosc27@gmail.com" class="cta-btn primary">Send an Email</a>
+          <a href="https://linkedin.com/in/carlos-miguel-cariño-492430253" target="_blank" rel="noopener" class="cta-btn secondary">View LinkedIn</a>
+        </div>
+        <a href="#" class="cta-btn ghost">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 
+          Book a call
+        </a>
+
         <div class="contact-list">
           <div class="contact-item">
             <span class="lbl">Email</span>
@@ -346,6 +385,16 @@
       </section>
 
     </main>
+
+    <!-- ULTRA-WIDE MINI-TOC -->
+    <aside id="mini-toc">
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certs</a>
+      <a href="#contact">Contact</a>
+    </aside>
   </div>
 
   <footer>
@@ -364,7 +413,11 @@
   </footer>
 
   <button id="back-to-top" aria-label="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+    <svg class="progress-ring" viewBox="0 0 44 44">
+      <circle class="ring-bg" cx="22" cy="22" r="20" />
+      <circle class="ring-progress" cx="22" cy="22" r="20" />
+    </svg>
+    <svg class="btt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
   </button>
 
   <!-- PROJECT MODAL -->
@@ -380,6 +433,5 @@
       <div id="modal-tags" class="project-tags tag-cloud"></div>
     </div>
   </div>
-
 </body>
 </html>
