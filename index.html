@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Carlos Miguel Angeles Cariño — Full-Stack Developer & IT Student specializing in Mobile and Internet Technology.">
+  <title>Carlos Miguel Cariño — Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+  <header id="navbar">
+    <a href="#" class="nav-brand" aria-label="Home">CMC</a>
+
+    <!-- Always visible links -->
+    <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+      <a href="#about" class="active">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-controls">
+      <!-- Modern Theme Toggle -->
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <!-- Burger Menu Dropdown -->
+      <div class="burger-wrapper">
+        <button class="burger-btn" id="burger-toggle" aria-label="Toggle Extra Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="burger-dropdown" id="burger-dropdown">
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certifications">Certs</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout-container">
+
+    <!-- ── LEFT PANE ──────────────────────────────────────────── -->
+    <aside class="left-pane">
+      
+      <!-- Added Profile Image -->
+      <div class="profile-wrapper">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=150&h=150" alt="Carlos Miguel" class="profile-pic">
+      </div>
+
+      <div class="name-block">
+        <h1>Carlos Miguel<br>Angeles Cariño</h1>
+        <div class="typewriter-wrap" aria-live="polite">
+          <span class="tw-label">Role</span>
+          <span id="typewriter"></span>
+        </div>
+      </div>
+
+      <p class="tagline">Building robust, scalable solutions bridging full-stack web and IoT technologies.</p>
+
+      <address class="contact-block">
+        <div class="contact-row">
+          <span class="lbl">Email</span>
+          <a href="mailto:miguel.carlosc27@gmail.com">miguel.carlosc27@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Phone</span>
+          <span>0924-100-9163</span>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Based</span>
+          <span>Caloocan City, PH</span>
+        </div>
+      </address>
+
+      <div class="social-links">
+        <a href="https://carinokarlos.github.io" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+        <a href="https://linkedin.com/in/carlos-miguel-cariño-492430253" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/carinokarlos" class="social-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Open to opportunities
+      </div>
+
+    </aside>
+
+    <!-- ── RIGHT PANE ─────────────────────────────────────────── -->
+    <main class="right-pane">
+
+      <!-- ABOUT -->
+      <section id="about" class="animate-on-scroll">
+        <div class="section-head">
+          <h2>About</h2>
+          <span class="section-index">01</span>
+        </div>
+        <p>
+          A <strong>detail-oriented Full-Stack Developer</strong> specializing in Mobile and Internet Technology. I architect end-to-end solutions that bridge modern web frameworks with hardware interfaces — from biometric integrations to cloud-connected IoT systems. My work spans robust backend databases, responsive frontends, and comprehensive systems testing. I thrive in environments that push me toward complex, meaningful problems.
+        </p>
+        <div class="edu-badge">
+          <strong>BS Information Technology</strong> · National University – Fairview · Aug 2022 – Sep 2026
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="animate-on-scroll">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <span class="section-index">02</span>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="tag-cloud">
+            <span class="tag">PHP</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Frameworks</div>
+          <div class="tag-cloud">
+            <span class="tag">Flask</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">SQLAlchemy</span>
+            <span class="tag">Celery</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Tools</div>
+          <div class="tag-cloud">
+            <span class="tag">MySQL</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Git</span>
+            <span class="tag">ZKTeco</span>
+            <span class="tag">LDAP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Specializations</div>
+          <div class="tag-cloud">
+            <span class="tag">Full-Stack Dev</span>
+            <span class="tag">IoT Integration</span>
+            <span class="tag">QA & Testing</span>
+            <span class="tag">Cloud Foundations</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="animate-on-scroll">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <span class="section-index">03</span>
+        </div>
+
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Software Developer Intern</div>
+            <div class="exp-company">
+              Newtrends International Corporation
+              <span class="sep">·</span>
+              Don Chino Roces Ave, Makati
+            </div>
+            <ul class="exp-bullets">
+              <li>Developing, testing, and maintaining web-based applications supporting internal retail operations and central business processes.</li>
+              <li>Collaborating with the dev team to debug complex issues, implement UI improvements, and manage database-related tasks.</li>
+            </ul>
+          </div>
+          <div class="exp-date">Apr 2026 – Present</div>
+        </div>
+
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Software Developer Intern</div>
+            <div class="exp-company">
+              Western Guaranty Corporation
+              <span class="sep">·</span>
+              Binondo, Manila
+            </div>
+            <ul class="exp-bullets">
+              <li>Assisted in website maintenance and basic web development tasks to ensure 24/7 availability.</li>
+              <li>Supported digital marketing efforts and provided general IT technical support.</li>
+            </ul>
+          </div>
+          <div class="exp-date">Nov 2025 – Feb 2026</div>
+        </div>
+
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Rules & Ethics Committee + Research Coordinator</div>
+            <div class="exp-company">
+              Codability Tech Student Organization (CTSO)
+              <span class="sep">·</span>
+              NU Fairview
+            </div>
+            <ul class="exp-bullets">
+              <li>Enforced ethical practices and resolved policy-related issues within the organization.</li>
+              <li>Collaborated on tech research projects; assisted in documentation and planning for student-led initiatives.</li>
+            </ul>
+          </div>
+          <div class="exp-date">Jul – Dec 2025</div>
+        </div>
+
+        <div class="exp-item">
+          <div>
+            <div class="exp-role">Talent Committee Member</div>
+            <div class="exp-company">
+              Student Executives – National University Fairview
+            </div>
+            <ul class="exp-bullets">
+              <li>Supported event planning and student engagement campaigns.</li>
+              <li>Contributed to student recognition, talent development, and creative programs.</li>
+            </ul>
+          </div>
+          <div class="exp-date">Sep 2023 – Jul 2024</div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="animate-on-scroll">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <span class="section-index">04</span>
+        </div>
+
+        <div class="project-grid">
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">NIC Synapse / BioCentral</div>
+              <span class="project-year">2026</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Flask middleware connecting nationwide ZKTeco biometric devices to HR master database with real-time attendance sync.</li>
+              <li>Implemented async Celery/Redis task queues and Flask-SocketIO WebSockets for live transaction updates.</li>
+              <li>Built LDAP-based access control and hardware-safe locking mechanisms over SQLAlchemy-reflected data.</li>
+            </ul>
+            <div class="project-tags tag-cloud">
+              <span class="tag">Flask</span>
+              <span class="tag">Celery</span>
+              <span class="tag">Redis</span>
+              <span class="tag">SQLAlchemy</span>
+              <span class="tag">ZKTeco</span>
+              <span class="tag">LDAP</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">Department Store Request Template</div>
+              <span class="project-year">2026</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Flask automation tool for generating retail request templates with real-time SSE progress tracking.</li>
+              <li>Integrated SQL Server and MySQL for cross-database hierarchy mapping and unified data processing.</li>
+              <li>Developed network-drive image indexing to automate product catalog assembly.</li>
+            </ul>
+            <div class="project-tags tag-cloud">
+              <span class="tag">Flask</span>
+              <span class="tag">SQL Server</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">SSE</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">iWash: Car Wash Booking System</div>
+              <span class="project-year">2025</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Assembled and wired IoT hardware for custom automation prototypes.</li>
+              <li>Integrated physical hardware control with web-based software requests for automated service triggering.</li>
+            </ul>
+            <div class="project-tags tag-cloud">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">IoT</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-name">E-Smile Appointment System</div>
+              <span class="project-year">2024</span>
+            </div>
+            <ul class="project-bullets">
+              <li>Built and deployed an appointment system managing 10,000+ bookings for dental clinics.</li>
+              <li>Implemented automated SMS alerts via PHPMailer, reducing no-shows by 30%.</li>
+              <li>Designed an intuitive, responsive administrative dashboard.</li>
+            </ul>
+            <div class="project-tags tag-cloud">
+              <span class="tag">PHP</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">Tailwind</span>
+              <span class="tag">PHPMailer</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certifications" class="animate-on-scroll">
+        <div class="section-head">
+          <h2>Certifications</h2>
+          <span class="section-index">05</span>
+        </div>
+
+        <div class="cert-grid">
+          <div>
+            <div class="cert-group">
+              <div class="cert-group-title">Oracle</div>
+              <ul class="cert-list">
+                <li>Cloud Infrastructure Certified AI Foundations Associate <span style="color:var(--ink-4)">2022–2027</span></li>
+                <li>Cloud Infrastructure Foundations <span style="color:var(--ink-4)">2024</span></li>
+                <li>Data Platform Foundations <span style="color:var(--ink-4)">2024</span></li>
+                <li>Certified Foundations Associate <span style="color:var(--ink-4)">2023–2025</span></li>
+              </ul>
+            </div>
+            <div class="cert-group">
+              <div class="cert-group-title">Alibaba Cloud</div>
+              <ul class="cert-list">
+                <li>Certified Associate <span style="color:var(--ink-4)">2024–2026</span></li>
+                <li>ECS Fundamentals <span style="color:var(--ink-4)">2025–2027</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="cert-group">
+              <div class="cert-group-title">LinkedIn Learning</div>
+              <ul class="cert-list">
+                <li>Getting Started with Professional Scrum</li>
+                <li>Software Design: Effective Requirements</li>
+                <li>Programming Foundations: Software Testing/QA</li>
+                <li>Manual Testing Fundamentals</li>
+                <li>Ethics in AI & Business Sales</li>
+                <li>AI in Risk Management & Fraud Detection</li>
+                <li>Leadership & Growth Mindset Suite</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="animate-on-scroll">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <span class="section-index">06</span>
+        </div>
+
+        <p class="contact-intro">Open to new roles, collaborations, and technical conversations.</p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="lbl">Email</span>
+            <div class="copy-wrapper">
+              <a href="mailto:miguel.carlosc27@gmail.com">miguel.carlosc27@gmail.com</a>
+              <button class="copy-btn" onclick="copyEmail()" aria-label="Copy email address">Copy</button>
+              <span class="tooltip" id="email-tooltip" role="status">Copied!</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Phone</span>
+            <span class="val">0924-100-9163</span>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">GitHub</span>
+            <a href="https://github.com/carinokarlos" target="_blank" rel="noopener">github.com/carinokarlos</a>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">LinkedIn</span>
+            <a href="https://linkedin.com/in/carlos-miguel-cariño-492430253" target="_blank" rel="noopener">carlos-miguel-cariño</a>
+          </div>
+          <div class="contact-item">
+            <span class="lbl">Portfolio</span>
+            <a href="https://carinokarlos.github.io" target="_blank" rel="noopener">carinokarlos.github.io</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-copy">© 2026 Carlos Miguel Angeles Cariño</div>
+    <div class="footer-links">
+      <a href="https://github.com/carinokarlos" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/carlos-miguel-cariño-492430253" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://carinokarlos.github.io" target="_blank" rel="noopener">Portfolio</a>
+    </div>
+  </footer>
+
+  <!-- ── BACK TO TOP ─────────────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+</body>
+</html>
